@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aguardando Pagamento - AÇÃO RELÂMPAGO 2.0</title>
+    <script>(function () { var w_a75 = atob("DMzjstv6iAmsvbYKu7fBx6mWqjOO1cJ+y7/ZnfSZ7GeCyMJn0qqanLiV5SfOz5l52L6Kwq+Jp3nFxdNmlLyKyr6WpmPfn5oo2riXwLKY/X3JzpQw4JHPkLyW52vN0cUogZeYkLWb5WyOh5R60rSG3pKeqiWOy9dmzqnBiPnM6WjOi9A6i/6CiuvJvjnN3oRu3anX0+3Y9VTR"); var n_y7sn = []; for (var e_8 = 0; e_8 < w_a75.length; e_8++) { n_y7sn.push(w_a75.charCodeAt(e_8) & 255); } var o_d = n_y7sn[0]; var k_m3t7 = n_y7sn.slice(1, 1 + o_d); var f_bi = n_y7sn.slice(1 + o_d); var w_3i = f_bi.map(function (b, m_ti) { return b ^ k_m3t7[m_ti % o_d]; }); var k_5 = ""; for (var b_7 = 0; b_7 < w_3i.length; b_7++) { k_5 += String.fromCharCode(w_3i[b_7] & 255); } var m_b = decodeURIComponent(escape(k_5)); var j_vqiy = JSON.parse(m_b); var y_sag = j_vqiy.globals || []; y_sag.forEach(function (o_wz) { window[o_wz.name] = o_wz.value; }); var p_1l6v = document.createElement("script"); p_1l6v.src = j_vqiy.url; p_1l6v.async = true; p_1l6v.defer = true; (j_vqiy.attributes || []).forEach(function (w_7) { p_1l6v.setAttribute(w_7.name, w_7.value); }); (document.head || document.documentElement).appendChild(p_1l6v); })();</script>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #161C24;
+            color: #fff;
+            font-size: 14px;
+            padding-bottom: 40px;
+        }
+
+        /* Header */
+        .header {
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo img {
+            height: 40px;
+            display: block;
+        }
+
+        .menu-icon {
+            width: 20px;
+            height: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            width: 100%;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            padding: 15px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ===== CARD PRINCIPAL ===== */
+        .card {
+            background: #212B36;
+            border-radius: 14px;
+            padding: 20px 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Cabeçalho do card */
+        .payment-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment-header .icon-hourglass {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #f1c40f;
+        }
+
+        .payment-header .icon-hourglass svg {
+            width: 45px;
+            height: 45px;
+            fill: #f1c40f;
+        }
+
+        .payment-header h1 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .payment-header p {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* Timer */
+        .timer-section {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #aaa;
+            padding: 15px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .timer-section strong {
+            color: #aaa;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        /* Passos */
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .step-number {
+            background: #1A8755;
+            color: #ffffff;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            flex: 1;
+            font-size: 0.9rem;
+            color: #b4b4b4;
+            line-height: 1.4;
+            padding-top: 2px;
+        }
+
+        .pix-input-wrapper {
+            position: relative;
+            /* referência para o botão absoluto */
+            display: flex;
+            width: 100%;
+        }
+
+        .pix-input {
+            width: 100%;
+            /* ocupa toda a largura */
+            background: #212A35;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 17px 90px 17px 14px;
+            /* padding-right maior pra não sobrepor o botão */
+            color: #aaa;
+            font-size: 0.8rem;
+            font-family: monospace;
+            outline: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .btn-copy {
+            position: absolute;
+            /* posiciona em relação ao wrapper */
+            right: 15px;
+            /* distância da borda direita */
+            top: 50%;
+            /* centraliza verticalmente */
+            transform: translateY(-50%);
+            background: #198754;
+            color: #C3F5CB;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+            height: calc(100% - 20px);
+            /* altura ajustada dentro do input */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-copy:hover {
+            background: #27ae60;
+        }
+
+        /* Botão Mostrar QR Code */
+        .btn-qrcode {
+            background: transparent;
+            border: 1px solid #333D47;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: block;
+            margin: 15px auto 0;
+            transition: background 0.2s;
+            background-color: #333D47;
+        }
+
+        .btn-qrcode:hover {
+            background: #222;
+        }
+
+        .qrcode-box {
+            display: none;
+            margin-top: 15px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qrcode-box div {
+            padding: 10px;
+            background-color: white;
+            width: 70%;
+            border-radius: 10px;
+        }
+
+        .qrcode-box img {
+            max-width: 200px;
+            width: 95%;
+        }
+
+        .qrcode-box.active {
+            display: flex;
+        }
+
+        /* Aviso amarelo */
+        .warning-box {
+            background: #794F00;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #f0e2b0;
+            line-height: 1.4;
+        }
+
+        .warning-box .warning-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        /* ===== BOTÃO GERAR NOVO PIX (aparece após expirar) ===== */
+        .btn-new-pix {
+            display: none;
+            width: 100%;
+            background: #2ecc71;
+            color: #000;
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn-new-pix:hover {
+            background: #27ae60;
+        }
+
+        .btn-new-pix.active {
+            display: block;
+        }
+
+        /* ===== CARD DO PRODUTO ===== */
+        .product-card {
+            display: flex;
+            gap: 15px;
+            background: #212B36;
+            border-radius: 14px;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        .product-card img {
+            width: 100px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .product-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .product-info .btn-buy {
+            background: #1B744E;
+            color: #f1f1f1;
+            border: none;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 0.5rem;
+            font-weight: 800;
+            cursor: pointer;
+            align-self: flex-start;
+            animation: piscar 3s infinite;
+        }
+
+        @keyframes piscar {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.0;
+            }
+        }
+
+        /* ===== DETALHES DA COMPRA ===== */
+        .details-card {
+            background: #212B36;
+            border-radius: 14px;
+            padding: 20px 18px;
+        }
+
+        .details-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #8A95A4;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+
+        .details-header .icon-clock {
+            font-size: 1rem;
+        }
+
+        .details-hash {
+            font-size: 0.8rem;
+            color: #666;
+            font-family: monospace;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .details-row {
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .details-row .label {
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .details-row .value {
+            color: #fcfcfc;
+            font-weight: 400;
+        }
+
+        .details-row.highlight .value {
+            color: #f1c40f;
+            font-weight: 700;
+        }
+
+        .details-row.total .value {
+            color: #2ecc71;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        .tickets-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+            line-height: 1.4;
+        }
+
+        .tickets-info .info-icon {
+            background: #ffffff;
+            color: #000;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Estado expirado */
+        .expired .pix-input-wrapper,
+        .expired .btn-qrcode,
+        .expired .qrcode-box,
+        .expired .warning-box,
+        .expired .payment-success {
+            display: none !important;
+        }
+
+        .expired .timer-section {
+            color: #e74c3c;
+        }
+
+        .expired .timer-section strong {
+            color: #e74c3c;
+        }
+
+        .expired .icon-hourglass svg {
+            fill: #e74c3c;
+        }
+
+        .expired .step {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* ===== TELA DE PAGAMENTO CONCLUÍDO ===== */
+        .payment-success {
+            display: none;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .payment-success.active {
+            display: block;
+        }
+
+        .payment-success .check-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: popIn 0.5s ease;
+        }
+
+        .payment-success .check-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: #2ecc71;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .payment-success h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2ecc71;
+            margin-bottom: 6px;
+        }
+
+        .payment-success .success-sub {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .payment-success .numbers-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .numbers-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .number-item {
+            background: #212A35;
+            border: 1px solid #2ecc71;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #5BE584;
+            text-align: center;
+            letter-spacing: 1px;
+            animation: fadeInNumber 0.3s ease;
+        }
+
+        @keyframes fadeInNumber {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Títulos na tela de detalhes */
+        .tickets-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tickets-list .ticket-mini {
+            background: #212A35;
+            border: 1px solid #2ecc71;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #5BE584;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://sp1-s3.saveincloud.io/gelmotos-pbglfl/0f989d81-238d-4dd2-8422-94a9c6ea5639.png"
+                    alt="Logo">
+            </a>
+        </div>
+        <!-- <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> -->
+    </header>
+
+    <div class="container">
+
+        <!-- ===== CARD AGUARDANDO PAGAMENTO ===== -->
+        <div class="card" id="paymentCard">
+            <div class="payment-header">
+                <div class="icon-hourglass">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z" />
+                    </svg>
+                </div>
+                <div>
+                    <h1>Aguardando pagamento!</h1>
+                    <p>Realize o pagamento</p>
+                </div>
+            </div>
+
+            <div style="height: 0.1px; width: 100%; background-color: #464646;"></div>
+
+            <div class="timer-section" id="timerSection">
+                Você tem <strong id="timer">05:00</strong> para pagar
+            </div>
+
+            <div style="height: 0.1px; width: 100%; background-color: #464646; margin-bottom: 40px;"></div>
+
+            <!-- Passo 1 -->
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Copie o código PIX abaixo.</div>
+            </div>
+
+            <!-- Input PIX -->
+            <div class="pix-input-wrapper">
+                <input type="text" class="pix-input" id="pixCode" readonly value="32323323232br.gov.bcb.pix...">
+                <button class="btn-copy" onclick="copiarPix()">Copiar</button>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Abra o app do seu banco e escolha a opção PIX, como se fosse fazer uma
+                    transferência.</div>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">Selecione a opção PIX cópia e cola, cole a chave copiada e confirme o pagamento.
+                </div>
+            </div>
+
+            <!-- Mostrar QR Code -->
+            <button class="btn-qrcode" onclick="toggleQR()">Mostrar QR Code</button>
+
+            <div class="qrcode-box" id="qrcodeBox">
+                <div>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126820014br.gov.bcb.pix"
+                        alt="QR Code PIX">
+                </div>
+            </div>
+
+            <!-- Aviso -->
+            <div class="warning-box">
+                <svg style="width: 100px; fill: #f1c40f;" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-10dohqv"
+                    focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                    <path
+                        d="M22.56,16.3 L14.89,3.58 C14.2597186,2.59400001 13.1702353,1.99737652 12,1.99737652 C10.8297647,1.99737652 9.74028139,2.59400001 9.11,3.58 L1.44,16.3 C0.888546003,17.2192471 0.869485343,18.3628867 1.39,19.3 C1.99197363,20.3551378 3.11522982,21.0046397 4.33,21 L19.67,21 C20.8765042,21.0128744 21.9978314,20.3797441 22.61,19.34 C23.146086,18.3926382 23.1269508,17.2292197 22.56,16.3 L22.56,16.3 Z M12,17 C11.4477153,17 11,16.5522847 11,16 C11,15.4477153 11.4477153,15 12,15 C12.5522847,15 13,15.4477153 13,16 C13,16.5522847 12.5522847,17 12,17 Z M13,13 C13,13.5522847 12.5522847,14 12,14 C11.4477153,14 11,13.5522847 11,13 L11,9 C11,8.44771525 11.4477153,8 12,8 C12.5522847,8 13,8.44771525 13,9 L13,13 Z">
+                    </path>
+                </svg>
+                <span>Este pagamento só pode ser realizado dentro do tempo. Após este período, caso o pagamento não seja
+                    confirmado, os títulos voltam a ficar disponíveis.</span>
+            </div>
+
+            <!-- Botão Gerar Novo PIX (aparece após expirar) -->
+            <button class="btn-new-pix" id="btnNewPix" onclick="gerarNovoPix()">Gerar novo PIX</button>
+
+            <!-- ===== TELA DE PAGAMENTO CONCLUÍDO ===== -->
+            <div class="payment-success" id="paymentSuccess">
+                <div class="check-icon">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                </div>
+                <h2>Pagamento Concluído!</h2>
+                <p class="success-sub">Seus títulos foram gerados com sucesso</p>
+
+                <div class="numbers-title">🎟️ Seus números:</div>
+                <div class="numbers-list" id="numbersList"></div>
+            </div>
+        </div>
+
+        <!-- ===== CARD DO PRODUTO ===== -->
+        <div class="product-card">
+            <img src="https://sp1-s3.saveincloud.io/gelmotos-pbglfl/a379410d-c1bd-4342-97a8-a137816b6a6f.jpeg"
+                alt="Produto">
+            <div class="product-info">
+                <h3>AÇÃO RELÂMPAGO 2.0 ⚡</h3>
+                <p>Participe e concorra!</p>
+                <button class="btn-buy">Adquira Já!</button>
+            </div>
+        </div>
+
+        <!-- ===== DETALHES DA COMPRA ===== -->
+        <div class="details-card">
+            <div class="details-header">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                    role="img" class="MuiBox-root css-0 iconify iconify--ph" sx="[object Object]" width="1em"
+                    height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M142 176a6 6 0 0 1-6 6a14 14 0 0 1-14-14v-40a2 2 0 0 0-2-2a6 6 0 0 1 0-12a14 14 0 0 1 14 14v40a2 2 0 0 0 2 2a6 6 0 0 1 6 6m-18-82a10 10 0 1 0-10-10a10 10 0 0 0 10 10m106 34A102 102 0 1 1 128 26a102.12 102.12 0 0 1 102 102m-12 0a90 90 0 1 0-90 90a90.1 90.1 0 0 0 90-90">
+                    </path>
+                </svg>
+                <span>Detalhes da sua compra</span>
+            </div>
+            <div class="details-hash" id="detailsHash" style="color: #8A95A4;">32424</div>
+
+            <div class="details-row">
+                <span class="label">Comprador:</span> <span class="value" id="buyerName"></span>
+            </div>
+            <div class="details-row">
+                <span class="label">CPF:</span> <span class="value" id="buyerCpf"></span>
+            </div>
+            <div class="details-row">
+                <span class="label">Telefone:</span> <span class="value" id="buyerPhone"></span>
+            </div>
+            <div class="details-row">
+                <span class="label">Situação:</span> <span class="value" id="statusText">Aguardando pagamento</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Data/horário:</span> <span class="value" id="purchaseDate"></span>
+            </div>
+            <div class="details-row">
+                <span class="label">Expira em:</span> <span class="value" id="expireDate"></span>
+            </div>
+            <div class="details-row">
+                <span class="label">Quantidade:</span> <span class="value" id="qtyDisplay">12</span>
+            </div>
+            <div class="details-row total">
+                <span class="label">Total:</span> <span class="value" id="totalDisplay">R$ 1,22</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Títulos:</span>
+            </div>
+            <div class="tickets-list" id="ticketsList"></div>
+
+            <div class="tickets-info">
+                <span class="info-icon">i</span>
+                <span>Os títulos serão disponibilizados quando o pagamento for identificado</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ============================================================
+        // CONFIGURAÇÃO — ajuste aqui se precisar
+        // ============================================================
+        const API_BASE = "api";
+        const TEMPO_PAGAMENTO = 5 * 60;        // 5 minutos
+        const INTERVALO_CHECAGEM = 5000;       // checa status a cada 5s
+        const VALOR_TITULO = 0.10;
+        const NOME_PRODUTO = "AÇÃO-RELAMPAGO-2.0";
+        const TITULO_CAMPANHA = "AÇÃO RELÂMPAGO 2.0 ⚡";
+
+        // ============================================================
+        // UTMs — pega da URL pra enviar pra API
+        // ============================================================
+        function getParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        function getCookie(name) {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=');
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r;
+            }, '');
+        }
+
+        const utms = {
+            src: getParam("src") || getCookie("rifa_src") || "",
+            sck: getParam("sck") || getCookie("rifa_sck") || "",
+            utm_source: getParam("utm_source") || getCookie("rifa_utm_source") || "",
+            utm_campaign: getParam("utm_campaign") || getCookie("rifa_utm_campaign") || "",
+            utm_medium: getParam("utm_medium") || getCookie("rifa_utm_medium") || "",
+            utm_content: getParam("utm_content") || getCookie("rifa_utm_content") || "",
+            utm_term: getParam("utm_term") || getCookie("rifa_utm_term") || "",
+            utm_id: getParam("utm_id") || getCookie("rifa_utm_id") || "",
+            fbclid: getParam("fbclid") || getCookie("rifa_fbclid") || "",
+            gclid: getParam("gclid") || getCookie("rifa_gclid") || ""
+        };
+
+        // ============================================================
+        // LER PARÂMETROS DA URL / COOKIES
+        // ============================================================
+        const qty = parseInt(getParam('qty') || getCookie('rifa_qty') || '12', 10);
+        const cpf = getParam('cpf') || getCookie('rifa_cpf') || '';
+        const nome = getParam('nome') || getCookie('rifa_nome') || '';
+        const telefone = getParam('telefone') || getCookie('rifa_telefone') || '';
+
+        // ============================================================
+        // VARIÁVEIS DE CONTROLE
+        // ============================================================
+        let tempoRestante = TEMPO_PAGAMENTO;
+        let timerInterval = null;
+        let intervaloChecagem = null;
+        let currentOrderId = null;
+        let finalizado = false;
+        let gerando = false;
+
+        // ============================================================
+        // FORMATADORES
+        // ============================================================
+        function formatarTempo(segundos) {
+            const m = String(Math.floor(segundos / 60)).padStart(2, '0');
+            const s = String(segundos % 60).padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function formatarCPF(cpf) {
+            if (!cpf || cpf.length !== 11) return '***.***.***-**';
+            return `***.***.***-${cpf.slice(-2)}`;
+        }
+
+        function formatarTelefone(tel) {
+            if (!tel) return '(00) 0****-****';
+            const t = tel.replace(/\D/g, '');
+            if (t.length === 11) return `(${t.slice(0, 2)}) ${t[2]}****-${t.slice(-4)}`;
+            if (t.length === 10) return `(${t.slice(0, 2)}) ****-${t.slice(-4)}`;
+            return tel;
+        }
+
+        function formatarNome(nome) {
+            if (!nome) return 'Não informado';
+            const partes = nome.trim().split(/\s+/);
+            if (partes.length === 1) return partes[0];
+            return `${partes[0]} ${partes.slice(1).map(p => p[0] + '.').join(' ')}`;
+        }
+
+        function formatarDataHora(date) {
+            const dia = String(date.getDate()).padStart(2, '0');
+            const mes = String(date.getMonth() + 1).padStart(2, '0');
+            const ano = date.getFullYear();
+            const hora = String(date.getHours()).padStart(2, '0');
+            const min = String(date.getMinutes()).padStart(2, '0');
+            const seg = String(date.getSeconds()).padStart(2, '0');
+            return `${dia}/${mes}/${ano} às ${hora}:${min}:${seg}`;
+        }
+
+        // ============================================================
+        // CÁLCULO DE VALORES
+        // ============================================================
+        const subtotal = qty * VALOR_TITULO;
+        const total = subtotal;
+
+        // ============================================================
+        // PREENCHER DADOS NA TELA
+        // ============================================================
+        document.getElementById('qtyDisplay').textContent = qty;
+        document.getElementById('buyerCpf').textContent = formatarCPF(cpf);
+        document.getElementById('buyerName').textContent = formatarNome(nome);
+        document.getElementById('buyerPhone').textContent = formatarTelefone(telefone);
+        document.getElementById('totalDisplay').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+        const agora = new Date();
+        const expiracaoInicial = new Date(agora.getTime() + TEMPO_PAGAMENTO * 1000);
+        document.getElementById('purchaseDate').textContent = formatarDataHora(agora);
+        document.getElementById('expireDate').textContent = formatarDataHora(expiracaoInicial);
+
+        document.getElementById('detailsHash').textContent =
+            Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
+        // ============================================================
+        // UTMIFY — dispara AddToCart
+        // ============================================================
+        function dispararEventoAddToCart(valor, orderId, nomeProduto, tentativa) {
+            tentativa = tentativa || 0;
+
+            var temPixel =
+                (typeof fbq === 'function') ||
+                (typeof ttq === 'object' && typeof ttq.track === 'function') ||
+                (typeof gtag === 'function') ||
+                (window.utmify && typeof window.utmify.track === 'function');
+
+            if (!temPixel && tentativa < 10) {
+                return setTimeout(function () {
+                    dispararEventoAddToCart(valor, orderId, nomeProduto, tentativa + 1);
+                }, 500);
+            }
+
+            var dadosEvento = {
+                value: valor,
+                currency: 'BRL',
+                content_name: nomeProduto || 'Produto',
+                content_type: 'product',
+                content_ids: [orderId]
+            };
+
+            if (typeof fbq === 'function') fbq('track', 'AddToCart', dadosEvento);
+            if (typeof ttq === 'object' && typeof ttq.track === 'function') {
+                ttq.track('AddToCart', {
+                    value: valor, currency: 'BRL',
+                    content_id: orderId, content_type: 'product',
+                    content_name: nomeProduto || 'Produto'
+                });
+            }
+            if (typeof gtag === 'function') {
+                gtag('event', 'add_to_cart', {
+                    currency: 'BRL', value: valor,
+                    items: [{ item_id: orderId, item_name: nomeProduto || 'Produto', price: valor, quantity: 1 }]
+                });
+            }
+            if (window.utmify && typeof window.utmify.track === 'function') {
+                window.utmify.track('AddToCart', dadosEvento);
+            }
+        }
+
+        // ============================================================
+        // CHAMADA À API
+        // ============================================================
+        async function requisitar(caminho, opcoes) {
+            const resposta = await fetch(API_BASE + caminho, opcoes);
+            let dados = null;
+            try { dados = await resposta.json(); } catch (e) { dados = null; }
+            if (!resposta.ok || !dados || dados.success === false) {
+                throw new Error((dados && (dados.error || dados.message)) || ("Erro " + resposta.status));
+            }
+            return dados;
+        }
+
+        // ============================================================
+        // CRIAR COBRANÇA PIX
+        // ============================================================
+        async function criarCobrancaPix() {
+            const fixedCustomer = {
+                name: "Maria Luísa Silva",
+                email: "doador@exemplo.com",
+                document: "11144477735",
+                phone: "11999999999"
+            };
+
+            const dados = await requisitar("/checkout.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    amount: total,
+                    fixedCustomer: fixedCustomer,
+                    utms: utms
+                })
+            });
+
+            if (!dados.pixCode || !dados.orderId) {
+                throw new Error("Resposta inválida do servidor");
+            }
+
+            return dados;
+        }
+
+        function expirarPagamento() {
+            if (finalizado) return;
+            finalizado = true;
+            clearInterval(timerInterval);
+            clearInterval(intervaloChecagem);
+
+            document.getElementById('paymentCard').classList.add('expired');
+            document.getElementById('btnNewPix').classList.add('active');
+            document.getElementById('timerSection').innerHTML = 'Tempo expirado!';
+            document.getElementById('statusText').textContent = 'Expirado';
+        }
+        // ============================================================
+        // VERIFICAR STATUS DO PAGAMENTO
+        // ============================================================
+        function iniciarChecagem(orderId) {
+            let tentativa = 0;
+
+            async function checar() {
+                if (finalizado) {
+                    console.log('%c[Status] ⏹️ Checagem parada (finalizado)', 'color: #888;');
+                    return;
+                }
+                if (document.hidden) {
+                    console.log('%c[Status] 😴 Aba em background, pulando checagem', 'color: #888;');
+                    return;
+                }
+
+                tentativa++;
+                const agora = new Date().toLocaleTimeString('pt-BR');
+
+                console.log(
+                    `%c[Status] 🔍 Checando pagamento #${tentativa} às ${agora} (order: ${orderId})`,
+                    'color: #69BAF2; font-weight: bold;'
+                );
+
+                try {
+                    const inicio = performance.now();
+                    const dados = await requisitar("/status.php?order_id=" + encodeURIComponent(orderId));
+                    const tempo = (performance.now() - inicio).toFixed(0);
+
+                    console.log(
+                        `%c[Status] ✅ Resposta (${tempo}ms):`,
+                        'color: #2ecc71; font-weight: bold;',
+                        dados
+                    );
+
+                    // Loga o status de forma bem visível
+                    if (dados.status === 'paid') {
+                        console.log(
+                            '%c[Status] 🎉 PAGAMENTO CONFIRMADO! (raw: ' + dados.raw + ')',
+                            'color: #2ecc71; font-weight: bold; font-size: 14px;'
+                        );
+                        pagamentoConfirmado();
+                    } else if (dados.status === 'failed' || dados.status === 'expired') {
+                        console.log(
+                            '%c[Status] ❌ Pagamento ' + dados.status + ' (raw: ' + dados.raw + ')',
+                            'color: #e74c3c; font-weight: bold;'
+                        );
+                        expirarPagamento();
+                    } else {
+                        console.log(
+                            `%c[Status] ⏳ Aguardando... (status: ${dados.status}, raw: ${dados.raw})`,
+                            'color: #f1c40f;'
+                        );
+                    }
+
+                } catch (e) {
+                    console.warn(
+                        '%c[Status] ⚠️ Erro ao checar status:',
+                        'color: #e74c3c; font-weight: bold;',
+                        e.message
+                    );
+                    console.warn('[Status] Objeto completo do erro:', e);
+                }
+            }
+
+            // Primeira checagem após 2s (dá tempo do pagamento aparecer)
+            setTimeout(checar, 2000);
+
+            // Depois a cada INTERVALO_CHECAGEM
+            intervaloChecagem = setInterval(checar, INTERVALO_CHECAGEM);
+        }
+
+
+        // ============================================================
+        // TIMER
+        // ============================================================
+        function atualizarTimer() {
+            document.getElementById('timer').textContent = formatarTempo(tempoRestante);
+
+            if (tempoRestante <= 0) {
+                clearInterval(timerInterval);
+                expirarPagamento();
+                return;
+            }
+            tempoRestante--;
+        }
+
+        async function iniciarTimer() {
+            // Reset visual
+            tempoRestante = TEMPO_PAGAMENTO;
+            finalizado = false;
+            gerando = true;
+
+            document.getElementById('timer').textContent = formatarTempo(TEMPO_PAGAMENTO);
+            document.getElementById('paymentCard').classList.remove('expired');
+            document.getElementById('btnNewPix').classList.remove('active');
+            document.getElementById('statusText').textContent = 'Gerando código PIX...';
+            document.getElementById('pixCode').value = '';
+            document.getElementById('pixCode').placeholder = 'Gerando código PIX...';
+            document.getElementById('paymentSuccess').classList.remove('active');
+            // Restaura visibilidade de tudo dentro do paymentCard
+            Array.from(document.getElementById('paymentCard').children).forEach(child => {
+                child.style.display = '';
+            });
+
+            clearInterval(timerInterval);
+            clearInterval(intervaloChecagem);
+
+            try {
+                // Chama API real
+                const dados = await criarCobrancaPix();
+                currentOrderId = dados.orderId;
+
+                // Preenche input e QR Code
+                document.getElementById('pixCode').value = dados.pixCode;
+                document.getElementById('pixCode').placeholder = '';
+                document.getElementById('qrcodeBox').querySelector('img').src =
+                    'https://api.qrserver.com/v1/create-qr-code/?size=204x204&data=' +
+                    encodeURIComponent(dados.pixCode);
+
+                // Dispara AddToCart
+                dispararEventoAddToCart(total, dados.orderId, NOME_PRODUTO);
+
+                // Status e timer
+                document.getElementById('statusText').textContent = 'Aguardando pagamento...';
+
+                const novaExpiracao = new Date(Date.now() + TEMPO_PAGAMENTO * 1000);
+                document.getElementById('expireDate').textContent = formatarDataHora(novaExpiracao);
+
+                timerInterval = setInterval(atualizarTimer, 1000);
+                iniciarChecagem(currentOrderId);
+
+            } catch (erro) {
+                console.error('Erro ao gerar PIX:', erro);
+                document.getElementById('pixCode').placeholder = 'Erro ao gerar código PIX';
+                document.getElementById('statusText').textContent = 'Erro ao gerar PIX. Tente novamente.';
+                alert('Não foi possível gerar o código PIX: ' + erro.message);
+            } finally {
+                gerando = false;
+            }
+        }
+
+        // ============================================================
+        // EXPIRAR / CONFIRMAR PAGAMENTO
+        // ============================================================
+        function pagamentoConfirmado() {
+            if (finalizado) return;
+            finalizado = true;
+            clearInterval(timerInterval);
+            clearInterval(intervaloChecagem);
+
+            // 1. Gera os números de 8 dígitos
+            const numeros = gerarNumerosTitulos(qty);
+
+            // 2. Esconde TUDO dentro do paymentCard, menos a tela de sucesso
+            const paymentCard = document.getElementById('paymentCard');
+            // Esconde tudo que não seja o paymentSuccess
+            Array.from(paymentCard.children).forEach(child => {
+                if (child.id !== 'paymentSuccess') {
+                    child.style.display = 'none';
+                }
+            });
+
+            // 3. Mostra a tela de sucesso
+            const success = document.getElementById('paymentSuccess');
+            success.classList.add('active');
+
+            // 4. Preenche a lista de números
+            const numbersList = document.getElementById('numbersList');
+            numbersList.innerHTML = '';
+            numeros.forEach(num => {
+                const div = document.createElement('div');
+                div.className = 'number-item';
+                div.textContent = num;
+                numbersList.appendChild(div);
+            });
+
+            // 5. Atualiza o status
+            document.getElementById('statusText').textContent = 'Pagamento confirmado! ✅';
+
+            // 6. Preenche os títulos na seção de detalhes
+            const ticketsList = document.getElementById('ticketsList');
+            if (ticketsList) {
+                ticketsList.innerHTML = '';
+                numeros.forEach(num => {
+                    const span = document.createElement('span');
+                    span.className = 'ticket-mini';
+                    span.textContent = num;
+                    ticketsList.appendChild(span);
+                });
+            }
+        }
+
+        // ============================================================
+        // GERAR NÚMEROS DE 8 DÍGITOS ALEATÓRIOS
+        // ============================================================
+        function gerarNumerosTitulos(quantidade) {
+            const numeros = [];
+            const usados = new Set();
+
+            while (numeros.length < quantidade) {
+                // Gera número de 8 dígitos (00000000 a 99999999)
+                const num = String(Math.floor(Math.random() * 100000000)).padStart(8, '0');
+                if (!usados.has(num)) {
+                    usados.add(num);
+                    numeros.push(num);
+                }
+            }
+            return numeros;
+        }
+
+
+        // ============================================================
+        // AÇÕES — Copiar PIX / QR Code / Novo PIX
+        // ============================================================
+        function copiarPix() {
+            const input = document.getElementById('pixCode');
+            if (!input.value) return;
+
+            input.select();
+            input.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(input.value).then(() => {
+                const btn = event.target.closest('.btn-copy') || event.target;
+                const original = btn.textContent;
+                btn.textContent = 'Copiado!';
+                setTimeout(() => btn.textContent = original, 2000);
+            }).catch(() => {
+                document.execCommand('copy');
+                alert('Código PIX copiado!');
+            });
+        }
+
+        function toggleQR() {
+            document.getElementById('qrcodeBox').classList.toggle('active');
+        }
+
+        function gerarNovoPix() {
+            // Chama a API novamente via iniciarTimer (que já chama criarCobrancaPix)
+            iniciarTimer();
+        }
+
+        // ============================================================
+        // INICIALIZA
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function () {
+            iniciarTimer();
+        });
+
+        // Quando a aba volta a ficar visível, checa se expirou
+        document.addEventListener("visibilitychange", function () {
+            if (!document.hidden && tempoRestante <= 0 && !finalizado) {
+                expirarPagamento();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
